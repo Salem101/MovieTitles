@@ -1,0 +1,10 @@
+
+public class MovieTitles {
+
+	
+	public static void main(String[]args) throws IOException{
+		//read in files using relative path
+		FileReader file = new FileReader("C:\\Users\\rivka\\Downloads\\ml-latest-small\\ml-latest-small\\movies.csv"); 
+	
+	}
+}
