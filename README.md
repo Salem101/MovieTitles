@@ -20,6 +20,8 @@ Using insertLevelOrder which has Node data type to add the titles through recurs
 
 I used subset method to to return the existing data within the range of Harry Potter & Hulk..
 
+Used filewriter & printwriter to print results of subset. 
+
 
 
 
