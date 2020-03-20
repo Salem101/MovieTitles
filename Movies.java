@@ -5,19 +5,7 @@ import java.util.*;
 
 public class Tree {
 	Node root; 
-	
-	//Tree Node
-	static class Node{
-		String data; 
-		Node left, right; 
-		Node (String data)
-		{
-			this.data = data; 
-			this.right = null; 
-			this.left = null; 
-			
-		}
-	}
+
 	//Insert the nodes on level order
 	//using Array of movie titles
     public Node insertLevelOrder(String[] ti, Node root, int i) 
@@ -34,7 +22,6 @@ public class Tree {
     			root.right = insertLevelOrder(ti, root.right, 2 * i + 2); 
     			} 
     			return root; 
-    			
     }
 	//Print tree nodes inOrder Fasion
 	public void inOrder(Node root) {
@@ -43,6 +30,21 @@ public class Tree {
 			System.out.print(root.data + " ");
 			inOrder(root.right);
 		}
+	}
+	public static int extractYear(ArrayList<String> title) {
+		Scanner sc = new Scanner(System.in);
+		 String inputString;
+	        //2
+	        System.out.println("Enter a string :");
+	        inputString = sc.nextLine();
+	        //
+	        //4
+	        for (char ch : inputString.toCharArray()) {
+	            //5
+	            if (Character.isDigit(ch)) {
+	              System.out.print(ch + " ");
+
+		
 	}
 	public static void main(String[]args) throws IOException{
 		//Read in file using bufferedReader using file path
@@ -53,10 +55,14 @@ public class Tree {
 		ArrayList<String> movieID = new ArrayList<String>();
 		ArrayList<String> title = new ArrayList<String>();
 		ArrayList<String> genre = new ArrayList<String>();
-
+		ArrayList<String> year = new ArrayList<String>();
+		System.out.println("GOOD JOB"); 
 		String line;
 		
+		String[] y = extractYear(ArrayList title);
 		while ((line = br.readLine()) != null) {	
+		}
+		String line; 
 		String []info = line.split(","); 
 			
 			String id = info[0]; 
@@ -65,14 +71,18 @@ public class Tree {
 			String ti = info[1]; 
 			title.add(ti); 
 			
-			String gen = info[2]; 
+			String yr = info[2]; 
+			year.add(yr);
+			
+			String gen = info[3]; 
 			genre.add(gen);
 		}
         Tree t2 = new Tree(); 
-      //  t2.root = t2.insertLevelOrder(String[]ti, t2.root, 0); 
-        t2.root; 
+        int i;
+		insertLevelOrder(String[]ti, Node root, int i); 
         t2.inOrder(t2.root); 
 	br.close();  
 	}
+
 }
 
